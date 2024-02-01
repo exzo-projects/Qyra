@@ -1,0 +1,84 @@
+<section id="videos" class="videos">
+  <div class="container--auto">
+    <div class="videos__inner">
+      <div class="slider__info videos__info">
+        <div class="text-superior">
+          <span>медиа</span>
+        </div>
+        <h2 class="title slider__title">Ознакомительные видео</h2>
+        <p class="slider__desc">
+          Самой важной частью внеклеточного матрикса, обеспечивающей эластичность кожи, является коллаген. В коже
+          коллаген синтезируют клетки фибробласты, дополнительно выполняющие еще и защитные функции – профилактику
+          абсорбции и распространения патогенных микроорганизмов, токсинов окружающей среды и онкологических клеток.
+          Коллаген – это как цемент, скрепляющей всё вместе.
+        </p>
+      </div>
+
+      <div class="videos__slider slider">
+        <div id="videos-slider" class="swiper-container">
+          <div class="swiper-wrapper">
+            <div @click="playVideo($event.target)" class="swiper-slide slider__item videos__item">
+              <div data-video="https://youtube.com/embed/Y2IdZMugLng" class="videos__item_img slider__item_img">
+                <img decoding="async" src="images/dist/placeholder-video.jpg" width="458" height="300" alt="" />
+              </div>
+              <span class="videos__item_title"> Коллаген Кюра в порошке </span>
+              <p class="videos__item_desc">
+                Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его
+                корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад.
+              </p>
+            </div>
+            <div class="swiper-slide slider__item videos__item">
+              <div class="videos__item_img slider__item_img">
+                <img decoding="async" src="images/dist/placeholder-video.jpg" width="458" height="300" alt="" />
+              </div>
+              <span class="videos__item_title"> Коллаген Кюра в порошке </span>
+              <p class="videos__item_desc">
+                Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его
+                корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад.
+              </p>
+            </div>
+            <div class="swiper-slide slider__item videos__item">
+              <div class="videos__item_img slider__item_img">
+                <img decoding="async" src="images/dist/placeholder-video.jpg" width="458" height="300" alt="" />
+              </div>
+              <span class="videos__item_title"> Коллаген Кюра в порошке </span>
+              <p class="videos__item_desc">
+                Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его
+                корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад.
+              </p>
+            </div>
+            <div class="swiper-slide slider__item videos__item">
+              <div class="videos__item_img slider__item_img">
+                <img decoding="async" src="images/dist/placeholder-video.jpg" width="458" height="300" alt="" />
+              </div>
+              <span class="videos__item_title"> Коллаген Кюра в порошке </span>
+              <p class="videos__item_desc">
+                Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его
+                корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-prev videos__navigation_prev"></div>
+        <div class="swiper-button-next videos__navigation_next"></div>
+      </div>
+    </div>
+  </div>
+  <div
+    x-cloak
+    x-show.transition.opacity.duration.350ms="activeModal == 'video'"
+    class="modal videos__modal features__modal"
+  >
+    <div @click.self="hideModal()" class="modal__inner">
+      <div x-show.transition.scale.origin.top.duration.350ms="activeModal == 'video'" class="modal__content">
+        <button type="button" @click="hideModal()" class="modal__button_close">
+          <img decoding="async" width="20" height="20" src="images/dist/close.svg" alt="" />
+        </button>
+
+        <div class="features__modal_content">
+          <div class="videos__frame features__modal_img"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

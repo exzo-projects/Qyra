@@ -1,0 +1,161 @@
+<section id="features" class="features">
+  <div class="container">
+    <div class="features__inner">
+      <div class="features__meta">
+        <div class="text-superior">
+          <span>коллаген</span>
+        </div>
+        <h2 class="title features__title">Природная сила коллагена</h2>
+      </div>
+
+      <div class="features__wrapper">
+        <div class="features__info">
+          <div class="features__tabs">
+            <button
+              @click="selectTab('innovation')"
+              type="button"
+              :class="{'features__tabs_item--active' : tab == 'innovation'}"
+              class="features__tabs_item"
+            >
+              <img decoding="async" src="images/dist/features-icon-1.svg" width="50" height="50" alt="" />
+              <span>Инновация</span>
+            </button>
+            <button
+              @click="selectTab('efficiency')"
+              type="button"
+              :class="{'features__tabs_item--active' : tab == 'efficiency'}"
+              class="features__tabs_item"
+            >
+              <img decoding="async" src="images/dist/features-icon-2.svg" width="50" height="50" alt="" />
+              <span>Эффективность</span>
+            </button>
+            <button
+              @click="selectTab('result')"
+              type="button"
+              :class="{'features__tabs_item--active' : tab == 'result'}"
+              class="features__tabs_item"
+            >
+              <img decoding="async" src="images/dist/features-icon-3.svg" width="50" height="50" alt="" />
+              <span>Результат</span>
+            </button>
+          </div>
+        </div>
+        <div class="features__img">
+          <picture>
+            <source media="(max-width: 600px)" srcset="images/dist/features-mobile-img.png" />
+            <img decoding="async" loading="lazy" src="images/dist/features-img.png" width="500" height="813" alt="" />
+          </picture>
+        </div>
+        <div class="features__content">
+          <div x-show="tab === 'innovation'" class="features__content_item">
+            <span class="features__content_number">01</span>
+            <span class="features__content_title">Инновация</span>
+            <p class="features__content_desc">
+              Составляя основу соединительной ткани, коллаген является одним из ключевых компонентов суставов, костей,
+              сухожилий, волос, кожи, ногтей, зубов. Кроме того, коллаген образует стенки вен, артерий и капилляров.
+              Используемое в QYRA® активное вещество VERISOL® содержит биоактивные коллагеновые пептиды, эффективность
+              которых научно подтверждена.
+            </p>
+            <button type="button" @click="activeModal = 'innovation'" class="features__content_link">
+              Подробнее
+              <svg width="39" height="17" viewBox="0 0 39 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M0 8.47656H37M37 8.47656L27.4545 1.47656M37 8.47656L28.0909 15.4766"
+                  stroke="#E49928"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </button>
+
+            <div
+              x-cloak
+              x-show.transition.opacity.duration.350ms="activeModal == 'innovation'"
+              class="modal features__modal"
+            >
+              <div @click.self="hideModal()" class="modal__inner">
+                <div
+                  x-show.transition.scale.origin.top.duration.350ms="activeModal == 'innovation'"
+                  class="modal__content"
+                >
+                  <button type="button" @click="hideModal()" class="modal__button_close">
+                    <img decoding="async" width="20" height="20" src="images/dist/close.svg" alt="" />
+                  </button>
+
+                  <div class="features__modal_content">
+                    <div class="features__modal_img">
+                      <img decoding="async" src="images/dist/placeholder-video.jpg" alt="" />
+                    </div>
+                    <span class="features__content_title features__modal_title">Инновация</span>
+                    <div class="features__modal_tips">
+                      <div class="features__modal_tips-item">
+                        <img decoding="async" width="50" height="50" src="images/dist/features-icon-3.svg" alt="" />
+                        <span>Без парабенов</span>
+                      </div>
+                    </div>
+                    <div class="features__modal_desc">
+                      <p>
+                        Самой важной частью внеклеточного матрикса, обеспечивающей эластичность кожи, является коллаген.
+                        В коже коллаген синтезируют клетки фибробласты, дополнительно выполняющие еще и защитные функции
+                        – профилактику абсорбции и распространения патогенных микроорганизмов, токсинов окружающей среды
+                        и онкологических клеток.
+                      </p>
+                      <p>
+                        Коллаген – это как цемент, скрепляющей всё вместе. Самой важной частью внеклеточного матрикса,
+                        обеспечивающей эластичность кожи, является коллаген. В коже коллаген синтезируют клетки
+                        фибробласты, дополнительно выполняющие еще и защитные функции – профилактику абсорбции и
+                        распространения патогенных микроорганизмов, токсинов окружающей среды и онкологических клеток.
+                        Коллаген – это как цемент, скрепляющей всё вместе.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div x-cloak x-show="tab === 'efficiency'" class="features__content_item">
+            <span class="features__content_number">02</span>
+            <span class="features__content_title">Эффективность</span>
+            <p class="features__content_desc">
+              Составляя основу соединительной ткани, коллаген является одним из ключевых компонентов суставов, костей,
+              сухожилий, волос, кожи, ногтей, зубов. Кроме того, коллаген образует стенки вен, артерий и капилляров.
+              Используемое в QYRA® активное вещество VERISOL® содержит биоактивные коллагеновые пептиды, эффективность
+              которых научно подтверждена.
+            </p>
+            <a href="" class="features__content_link"
+              >Подробнее
+              <svg width="39" height="17" viewBox="0 0 39 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M0 8.47656H37M37 8.47656L27.4545 1.47656M37 8.47656L28.0909 15.4766"
+                  stroke="#E49928"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div x-cloak x-show="tab === 'result'" class="features__content_item">
+            <span class="features__content_number">03</span>
+            <span class="features__content_title">Результат</span>
+            <p class="features__content_desc">
+              Составляя основу соединительной ткани, коллаген является одним из ключевых компонентов суставов, костей,
+              сухожилий, волос, кожи, ногтей, зубов. Кроме того, коллаген образует стенки вен, артерий и капилляров.
+              Используемое в QYRA® активное вещество VERISOL® содержит биоактивные коллагеновые пептиды, эффективность
+              которых научно подтверждена.
+            </p>
+            <a href="" class="features__content_link"
+              >Подробнее
+              <svg width="39" height="17" viewBox="0 0 39 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M0 8.47656H37M37 8.47656L27.4545 1.47656M37 8.47656L28.0909 15.4766"
+                  stroke="#E49928"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

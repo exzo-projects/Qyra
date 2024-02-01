@@ -1,0 +1,117 @@
+.media {
+  margin-top: 150px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 243px;
+    height: 400px;
+    pointer-events: none;
+  }
+
+  &::before {
+    top: 0;
+    background-image: url("../images/dist/form-flowers-left.svg");
+    left: 0;
+  }
+
+  &__title {
+    max-width: 550px;
+    margin-bottom: 35px;
+  }
+
+  &__links {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+
+    &_item {
+      display: flex;
+      transition: box-shadow 0.2s ease;
+      border-radius: 100%;
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+  &__slider {
+    position: relative;
+    padding-bottom: 85px;
+
+    &_item {
+      width: 100%;
+
+      & img {
+        border-radius: 15px;
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 4 / 4;
+      }
+    }
+  }
+
+  & .swiper-button-prev {
+    left: calc(50% - 35px) !important;
+    transform: translateX(-50%);
+  }
+  & .swiper-button-next {
+    left: auto !important;
+    right: calc(50% - 35px) !important;
+    transform: translateX(50%);
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .media {
+    margin-top: 80px;
+
+    & .container {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    &__meta {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    &__slider {
+      &_item {
+        max-width: 78vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .media {
+    margin-top: 60px;
+
+    &::before {
+      width: 200px;
+      height: 250px;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__links {
+      margin-bottom: 20px;
+    }
+
+    &__slider {
+      padding-bottom: 80px;
+    }
+  }
+}

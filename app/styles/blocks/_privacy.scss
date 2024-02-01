@@ -1,0 +1,30 @@
+.privacy {
+  &-modal {
+    &__content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__title {
+      margin-top: 25px;
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: $orange;
+    }
+
+    &__text {
+      font-size: 16px;
+      color: $brown;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

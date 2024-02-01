@@ -1,0 +1,70 @@
+<section id="form" class="form">
+  <div class="container container--sm">
+    <div class="form__inner">
+      <div class="text-superior">
+        <span>для специалистов</span>
+      </div>
+      <h2 class="title title--center form__title">Специальные условия на приобретение питьевого коллагена Qyra®*</h2>
+      <span class="form__alert">
+        <span class="required">*</span> Форма предназначена только для специалистов, медицинских центров и салонов
+        красоты
+      </span>
+
+      <form
+        x-cloak
+        x-show.transition.scale.origin.top.opacity.duration.350ms="isFormVisible"
+        class="form__body"
+        @submit.prevent="handleForm($event.target)"
+      >
+        <button type="button" @click="toggleForm" class="form__button_close">
+          <img decoding="async" width="40" height="40" src="images/dist/close.svg" alt="" />
+        </button>
+        <label class="form__field">
+          <input type="text" placeholder="Введите имя" required />
+          <span>Ваше имя</span>
+        </label>
+        <label class="form__field">
+          <input type="email" placeholder="example@mail.ru" required />
+          <span>E-mail</span>
+        </label>
+        <label class="form__field">
+          <input type="text" placeholder="Москва" required />
+          <span>Город</span>
+        </label>
+        <label class="form__field">
+          <input type="phone" placeholder="+77777777777" required />
+          <span>Номер телефона</span>
+        </label>
+        <label class="form__field">
+          <input type="text" placeholder="Qyra clinic" required />
+          <span>Название клиники/салона</span>
+        </label>
+        <button class="form__button" type="submit">Отправить заявку</button>
+        <span class="form__privacy">
+          Нажимая на кнопку «Отправить заявку»,
+          <button type="button" @click="activeModal = 'privacy'">
+            вы даете согласие на обработку своих персональных данных
+          </button>
+        </span>
+      </form>
+      <button type="button" @click="toggleForm" class="form__button mobile">Отправить заявку</button>
+    </div>
+  </div>
+
+  <!-- noindex -->
+  <div x-cloak x-show.transition.opacity.duration.350ms="activeModal == 'form'" class="modal form__modal">
+    <div @click.self="hideModal()" class="modal__inner">
+      <div x-show.transition.scale.origin.top.duration.350ms="activeModal == 'form'" class="modal__content">
+        <button type="button" @click="hideModal()" class="modal__button_close">
+          <img decoding="async" width="20" height="20" src="images/dist/close.svg" alt="" />
+        </button>
+
+        <div class="form__modal_content">
+          <img decoding="async" width="143" height="163" src="images/dist/checkmark.svg" alt="" />
+          <span>Ваши данные успешно отправлены!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /noindex -->
+</section>

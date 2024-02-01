@@ -1,0 +1,131 @@
+.videos {
+  margin-top: 230px;
+
+  &__inner {
+    display: flex;
+  }
+
+  &__info {
+    & .text-superior {
+      margin-top: -50px;
+      justify-content: flex-start;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &--active {
+      & .videos__item_img {
+        &::before {
+          content: none;
+        }
+      }
+    }
+
+    &_img {
+      &:hover {
+        &::before {
+          transform: scale(1.2);
+        }
+      }
+
+      &::before {
+        will-change: transform;
+        position: absolute;
+        content: "";
+        cursor: pointer;
+        width: 60px;
+        height: 60px;
+        background-image: url("../images/dist/play.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: transform 0.2s ease;
+      }
+    }
+
+    &_title {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    &_desc {
+      line-height: 1.4;
+      font-weight: 300;
+    }
+  }
+
+  &__frame {
+    margin-bottom: 0;
+
+    & iframe {
+      background-color: #000;
+      aspect-ratio: 16 / 9;
+      border-radius: 16px;
+    }
+  }
+
+  &__modal {
+    & .modal__content {
+      max-width: 1000px;
+      padding: 20px;
+    }
+
+    & .modal__button_close {
+      top: -20px;
+      right: -20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .videos {
+    margin-top: 120px;
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__modal {
+      & .modal__button_close {
+        top: -30px;
+        right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .videos {
+    &__info {
+      & .text-superior {
+        justify-content: center;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .videos {
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .videos {
+    &__item {
+      &_title {
+        font-size: 20px;
+        font-family: Jost, sans-serif;
+        line-height: 1.1;
+      }
+
+      &_desc {
+        font-size: 14px;
+      }
+    }
+  }
+}

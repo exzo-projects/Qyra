@@ -1,0 +1,59 @@
+<section id="buy" class="stores">
+  <div class="container">
+    <div class="stores__inner">
+      <div class="text-superior">
+        <span>магазины</span>
+      </div>
+      <h2 class="title title--center stores__title">
+        Нашу продукцию вы можете приобрести в интернете<button
+          type="button"
+          @click="activeModal = 'alert'"
+          class="required"
+        >
+          *
+        </button>
+      </h2>
+      <div class="stores__slider">
+        <div id="stores-slider" class="swiper-container">
+          <div class="swiper-wrapper">
+            <a href="" class="swiper-slide stores__slider_item">
+              <img decoding="async" src="images/dist/placeholder-stores.png" alt="" />
+            </a>
+            <a href="" class="swiper-slide stores__slider_item">
+              <img decoding="async" src="images/dist/placeholder-stores.png" alt="" />
+            </a>
+            <a href="" class="swiper-slide stores__slider_item">
+              <img decoding="async" src="images/dist/placeholder-stores.png" alt="" />
+            </a>
+            <a href="" class="swiper-slide stores__slider_item">
+              <img decoding="async" src="images/dist/placeholder-stores.png" alt="" />
+            </a>
+            <a href="" class="swiper-slide stores__slider_item">
+              <img decoding="async" src="images/dist/placeholder-stores.png" alt="" />
+            </a>
+          </div>
+        </div>
+
+        <div class="swiper-button-prev stores__navigation_prev"></div>
+        <div class="swiper-button-next stores__navigation_next"></div>
+      </div>
+    </div>
+  </div>
+
+  <div x-cloak x-show.transition.opacity.duration.350ms="activeModal == 'alert'" class="modal">
+    <div @click.self="hideModal()" class="modal__inner">
+      <div x-show.transition.scale.origin.top.duration.350ms="activeModal == 'alert'" class="modal__content">
+        <button type="button" @click="hideModal()" class="modal__button_close">
+          <img decoding="async" width="20" height="20" src="images/dist/close.svg" alt="" />
+        </button>
+
+        <div class="modal__text--regular">
+          <span
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias impedit placeat voluptates ab nihil
+            nobis quae accusantium nam facilis maxime?!</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

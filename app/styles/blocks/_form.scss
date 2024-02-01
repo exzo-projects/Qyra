@@ -1,0 +1,277 @@
+.form {
+  margin-top: 80px;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 243px;
+    height: 450px;
+    pointer-events: none;
+  }
+
+  &::before {
+    top: 0;
+    background-image: url("../images/dist/form-flowers-left.svg");
+    left: 0;
+  }
+
+  &::after {
+    top: 15%;
+    background-image: url("../images/dist/form-flowers-right.svg");
+    right: 0;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    max-width: 1100px;
+  }
+
+  &__alert {
+    font-size: 18px;
+    color: $brown;
+    line-height: 1.4;
+    font-style: italic;
+    text-align: center;
+    display: block;
+    max-width: 640px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+  }
+
+  &__field {
+    position: relative;
+    width: 100%;
+    display: block;
+
+    & span {
+      position: absolute;
+      left: 38px;
+      font-size: 18px;
+      top: -14px;
+      background-color: $bg;
+      padding: 0 5px;
+      color: $lightbrown;
+      transition: color 0.2s ease;
+    }
+
+    & input,
+    & textarea,
+    & select {
+      border-radius: 50px;
+      width: 100%;
+      border: 1px solid $lightbrown;
+      padding: 13px 28px;
+      color: $gray;
+      font-size: 18px;
+      font-family: inherit;
+      transition: border-color 0.2s ease, color 0.2s ease;
+      background-color: transparent;
+      appearance: none;
+
+      &:focus {
+        border-color: $brown;
+        color: $black;
+        background-color: transparent;
+
+        &::placeholder {
+          color: transparent;
+        }
+
+        &::-webkit-input-placeholder {
+          color: transparent;
+        }
+
+        & + span {
+          color: $brown;
+        }
+      }
+    }
+  }
+
+  &__button {
+    color: $white;
+    background-color: $lightbrown;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: 400;
+    transition: background-color 0.2s ease;
+    padding: 10px 28px;
+
+    &.mobile,
+    &_close {
+      display: none;
+    }
+
+    &:focus,
+    &:hover {
+      background-color: $brown;
+    }
+  }
+
+  &__privacy {
+    grid-column: 3;
+    color: $gray;
+    margin-top: -15px;
+    font-size: 14px;
+
+    & button {
+      color: $lightbrown;
+      transition: color .2s ease;
+
+      &:focus,
+      &:hover {
+        color: $brown;
+      }
+    }
+  }
+}
+
+.form__modal {
+  &_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & img {
+      margin-bottom: 25px;
+    }
+
+    & span {
+      font-size: 42px;
+      font-family: Jost, sans-serif;
+      font-weight: 300;
+      color: $brown;
+      max-width: 430px;
+      text-align: center;
+      line-height: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .form {
+    &::before,
+    &::after {
+      height: 300px;
+      width: 160px;
+    }
+
+    &::after {
+      top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .form {
+    &__body {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__privacy {
+      grid-column: 2;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .form {
+    &__field {
+      & span {
+        font-size: 15px;
+        top: -10px;
+      }
+
+      & input {
+        font-size: 16px;
+      }
+    }
+
+    &__button {
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .form {
+    &::before,
+    &::after {
+      height: 220px;
+      width: 120px;
+    }
+
+    &__button {
+      padding: 16px 20px;
+      width: 100%;
+
+      &.mobile {
+        display: block;
+      }
+
+      &_close {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    }
+
+    &__body {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $white;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      grid-gap: 0;
+      padding: 20px;
+      padding-top: 80px;
+
+      & .form__field {
+        & span {
+          background-color: $white;
+        }
+        &:not(:last-child) {
+          margin-bottom: 25px;
+        }
+      }
+    }
+
+    &__privacy {
+      grid-column: unset;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .form {
+    &__alert {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .form__modal {
+    &_content {
+      & span {
+        font-size: 32px;
+      }
+    }
+  }
+}

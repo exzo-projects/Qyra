@@ -1,0 +1,284 @@
+.vars {
+  margin-top: 130px;
+  position: relative;
+  background-image: url("../images/dist/vars-wave.png");
+  background-repeat: no-repeat;
+  background-size: 350px;
+  background-position: 0% 5%;
+
+  &__inner {
+    background-color: $white;
+    border-radius: 45px;
+    padding: 100px 145px 190px;
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.08);
+  }
+
+  &__title {
+    margin-bottom: 65px;
+  }
+
+  &__ingredients {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+    margin-bottom: 160px;
+
+    &_item {
+      display: flex;
+      align-items: center;
+    }
+
+    &_info {
+      display: flex;
+      flex-direction: column;
+      margin-left: 15px;
+    }
+
+    &_title {
+      font-size: 20px;
+      color: $brown;
+    }
+
+    &_desc {
+      color: $black;
+      font-size: 15px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &:nth-child(even) {
+      justify-content: flex-end;
+
+      & .vars__item_img {
+        left: -150px;
+        right: auto;
+      }
+    }
+
+    &:first-child {
+      margin-bottom: 230px;
+    }
+
+    &_info {
+      max-width: 530px;
+      width: 100%;
+    }
+
+    &_title {
+      font-size: 32px;
+      margin-bottom: 12px;
+      color: $brown;
+      display: block;
+    }
+
+    &_desc {
+      display: block;
+      color: $black;
+      font-size: 20px;
+      margin-bottom: 25px;
+      font-weight: 300;
+    }
+
+    &_img {
+      position: absolute;
+      right: 0;
+      pointer-events: none;
+      top: 50%;
+      transform: translateY(-50%);
+
+      & img {
+        max-width: 600px;
+      }
+    }
+
+    &_link {
+      color: $brown;
+
+      &:hover {
+        color: $orange;
+
+        & svg path {
+          stroke: $orange;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .vars {
+    background-image: none;
+
+    &__item {
+      &_img {
+        & img {
+          max-width: 500px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1367px) {
+  .vars {
+    &__inner {
+      padding: 70px 50px 140px;
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .vars {
+    &__ingredients {
+      margin-bottom: 80px;
+    }
+
+    &__item {
+      &:first-child {
+        margin-bottom: 150px;
+      }
+
+      &_img {
+        & img {
+          max-width: 400px;
+        }
+      }
+
+      &:nth-child(2n) {
+        & .vars__item_img {
+          left: -40px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .vars {
+    &__ingredients {
+      display: none;
+    }
+
+    &__item {
+      &_info {
+        max-width: 450px;
+      }
+
+      &_desc {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .vars {
+    &__item {
+      &_img {
+        & img {
+          max-width: 330px;
+        }
+      }
+
+      &_title {
+        font-size: 26px;
+        font-weight: 400;
+        font-family: Jost, sans-serif;
+      }
+
+      &_desc {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .vars {
+    margin-top: 280px;
+
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__inner {
+      background-color: transparent;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    &__items {
+      align-items: center;
+    }
+
+    &__item {
+      background-color: $white;
+      border-radius: 12px;
+      padding: 50px 35px;
+      box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.08);
+      flex-direction: column-reverse;
+
+      &_img {
+        position: initial;
+        transform: none !important;
+        margin-bottom: 10px;
+
+        & img {
+          max-width: 500px;
+          width: 100%;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .vars {
+    margin-top: 120px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .vars {
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .vars {
+    &__item {
+      padding: 30px 20px;
+
+      &_title {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      &_desc {
+        color: $brown;
+        margin-bottom: 10px;
+      }
+
+      &_link {
+        color: $orange;
+
+        & svg path {
+          filter: brightness(0) saturate(100%) invert(61%) sepia(66%) saturate(551%) hue-rotate(354deg) brightness(95%)
+            contrast(87%);
+        }
+      }
+    }
+  }
+}

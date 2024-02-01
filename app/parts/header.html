@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Project</title>
+    <meta name="description" content="description" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="preload" href="js/alpine.js" as="script" />
+    <link rel="preload" href="js/swiper.js" as="script" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <link rel="icon" href="images/favicon.png" />
+
+    <link rel="stylesheet" href="css/app.min.css" />
+  </head>
+  <body x-data="app()">
+    <header class="header">
+      <div class="header__inner">
+        <a href="" class="header__logo">
+          <img decoding="async" src="images/dist/logo.svg" width="200" height="74" alt="Qyra" />
+          <img
+            decoding="async"
+            src="images/dist/madein.svg"
+            class="header__mobile_label"
+            width="63"
+            height="25"
+            alt=""
+          />
+        </a>
+        <nav class="nav">
+          <a href="#features" class="nav__link"> Преимущества </a>
+          <a href="#vars" class="nav__link"> Формы выпуска </a>
+          <a href="#videos" class="nav__link"> Видео</a>
+          <a href="#news" class="nav__link"> Публикации </a>
+          <a href="#media" class="nav__link"> Социальные сети </a>
+          <a href="#buy" class="nav__link"> Где купить? </a>
+        </nav>
+        <button type="button" @click="toggleMenu" class="header__mobile_burger">
+          <img decoding="async" src="images/dist/burger.svg" width="40" height="21" alt="" />
+        </button>
+      </div>
+      <!-- noindex -->
+      <div x-cloak x-show.transition.opacity.duration.350ms="isMenuActive" class="header__menu">
+        <div class="header__menu_inner">
+          <a href="" class="header__menu_logo">
+            <img decoding="async" src="images/dist/logo.svg" width="200" height="74" alt="Qyra" />
+          </a>
+          <button type="button" @click="toggleMenu" class="header__menu_close">
+            <img decoding="async" width="40" height="40" src="images/dist/close.svg" alt="" />
+          </button>
+          <div @click="onMenuLinkClick($event.target)" class="header__menu_nav">
+            <a href="#features" class="nav__link"> Преимущества </a>
+            <a href="#vars" class="nav__link"> Формы выпуска </a>
+            <a href="#videos" class="nav__link"> Видео</a>
+            <a href="#news" class="nav__link"> Публикации </a>
+            <a href="#media" class="nav__link"> Социальные сети </a>
+            <a href="#buy" class="nav__link"> Где купить? </a>
+          </div>
+        </div>
+      </div>
+      <!-- /noindex -->
+    </header>

@@ -1,0 +1,244 @@
+$green: #8cc63f;
+$white: #fff;
+$black: #1a1a1a;
+$orange: #e49928;
+$brown: #693916;
+$lightbrown: #ac7752;
+$red: #cd0000;
+$gray: #999;
+$bg: #fff6ed;
+
+@mixin font($fname, $fstyle, $fweight, $furl) {
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $fweight;
+    font-display: swap;
+    src: local($fname), url($furl) format("woff2");
+  }
+}
+
+//@include font("Fractal", normal, 400, "../fonts/Fractal.woff2");
+@include font("Noto Sans", normal, 400, "../fonts/NotoSans.woff2");
+@include font("Noto Sans", italic, 400, "../fonts/NotoSans-Italic.woff2");
+@include font("Noto Sans", normal, 300, "../fonts/NotoSans-Light.woff2");
+@include font("Jost", normal, 300, "../fonts/Jost-Light.woff2");
+@include font("Jost", normal, 400, "../fonts/Jost-Regular.woff2");
+@include font("CodecPro", normal, 300, "../fonts/CodecPro-Light.woff2");
+@include font("CodecPro", normal, 200, "../fonts/CodecPro-Thin.woff2");
+@include font("Caveat", normal, 400, "../fonts/Caveat-Regular.woff2");
+
+[x-cloak] {
+  display: none !important;
+}
+
+html.overflow {
+  overflow-x: hidden !important;
+  overflow-y: scroll !important;
+  height: 100%;
+
+  & body {
+    overflow: hidden !important;
+    height: 100%;
+  }
+}
+
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::placeholder {
+  color: #000;
+  opacity: 1;
+}
+
+::-webkit-input-placeholder {
+  color: #000;
+  opacity: 1;
+}
+
+html {
+  font-size: 16px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  background-color: $bg;
+  overflow-x: hidden;
+}
+
+img,
+a,
+button {
+  user-select: none;
+  text-decoration: none;
+}
+
+a {
+  transition: color 0.2s ease;
+  outline: none;
+}
+
+input,
+button {
+  background-color: transparent;
+  border: 0;
+  font-family: inherit;
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+::placeholder {
+  opacity: 1;
+  color: inherit;
+}
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 1;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  appearance: none;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  position: relative;
+  border: 2.5px solid #000;
+  background-color: transparent;
+  box-shadow: 0 0 0 1px #000;
+  transition: box-shadow 0.1s ease, background-color 0.1s ease;
+
+  &:hover {
+    box-shadow: 0 0 0 2px #000;
+  }
+
+  &:checked {
+    background-color: #000;
+    box-shadow: 0 0 0 1px #000;
+
+    &:hover {
+      box-shadow: 0 0 0 2px #000;
+    }
+  }
+}
+
+input[type="checkbox"] {
+  border-radius: 0;
+
+  &:before {
+    border-radius: 0;
+  }
+}
+
+.container {
+  max-width: 1470px;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  &--sm {
+    max-width: 1330px;
+  }
+
+  &--auto {
+    padding-left: 15px;
+  }
+}
+
+.title {
+  display: block;
+  color: $brown;
+  font-size: 56px;
+  font-family: Jost, sans-serif;
+  font-weight: 300;
+  line-height: 1;
+
+  &--center {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &--large {
+    font-size: 66px;
+    line-height: 0.9;
+  }
+}
+
+.text-superior {
+  position: relative;
+  display: block;
+  color: $orange;
+  font-size: 40px;
+  font-weight: 400;
+  font-family: Caveat, sans-serif;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 60px;
+
+  & span {
+    position: absolute;
+    transform: rotate(-8.3deg);
+  }
+}
+
+.required {
+  color: $red;
+  font-size: 16px;
+}
+
+.grecaptcha-badge {
+  display: none !important;
+}
+
+@media screen and (max-width: 1367px) {
+  .title {
+    font-size: 50px;
+    line-height: 1;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .title {
+    font-size: 45px;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .title {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .text-superior {
+    font-size: 32px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 32px;
+  }
+  .text-superior {
+    font-size: 24px;
+  }
+}
+
+.grecaptcha-badge {
+  display: none !important;
+}

@@ -1,0 +1,269 @@
+.map {
+  margin-top: 200px;
+
+  &__info {
+    margin-right: 90px;
+    min-width: 440px;
+    max-width: 440px;
+    width: 100%;
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__title {
+    font-weight: 400;
+    margin-bottom: 40px;
+  }
+
+  &__content {
+    max-height: 430px;
+    overflow-y: auto;
+    display: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__selector {
+    margin-bottom: 40px;
+
+    & .form__field {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 19px;
+        height: 10px;
+        background-size: contain;
+        background-image: url("../images/dist/arrow-down.svg");
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  &__container {
+    width: 100%;
+    height: 500px;
+    max-width: 100%;
+    height: inherit;
+    border-radius: 30px;
+    overflow: hidden;
+
+    & > ymaps,
+    & img,
+    & iframe {
+      width: inherit;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+
+    &_title {
+      display: block;
+      font-size: 32px;
+      color: $brown;
+      font-family: Jost, sans-serif;
+      margin-bottom: 20px;
+      line-height: 1;
+      font-weight: 300;
+      transition: color .2s ease;
+    
+      &:hover {
+        cursor: pointer;
+        color: $lightbrown;
+      }
+    }
+
+    &_info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &_meta {
+      display: block;
+      font-size: 20px;
+      color: $lightbrown;
+      line-height: 1.3;
+      position: relative;
+      padding-left: 45px;
+
+      &:hover,
+      &:focus {
+        color: $brown;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 3px;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 22px;
+      }
+
+      &.geo {
+        color: $lightbrown;
+
+        &::before {
+          background-image: url("../images/dist/geo.svg");
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      &.phone::before {
+        background-image: url("../images/dist/phone.svg");
+        width: 26px;
+        height: 26px;
+      }
+
+      &.email::before {
+        background-image: url("../images/dist/email.svg");
+        width: 34px;
+        height: 22px;
+      }
+
+      &.web::before {
+        background-image: url("../images/dist/web.svg");
+        width: 27px;
+        height: 27px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .map {
+    &__title {
+      font-size: 45px;
+    }
+
+    &__info {
+      margin-right: 60px;
+      max-width: 400px;
+      min-width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .map {
+    margin-top: 120px;
+
+    &__title {
+      text-align: center;
+    }
+
+    &__container {
+      height: 400px;
+    }
+
+    &__inner {
+      flex-direction: column;
+    }
+
+    &__info {
+      margin-right: 0;
+      max-width: none;
+      min-width: auto;
+      margin-bottom: 35px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .map {
+    &__title {
+      font-size: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .map {
+    &__container {
+      height: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .map {
+    margin-top: 70px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .map {
+    &__title {
+      font-size: 32px;
+    }
+
+    &__selector {
+      margin-bottom: 30px;
+    }
+
+    &__item {
+      &_title {
+        font-weight: 400;
+        font-size: 20px;
+      }
+
+      &_meta {
+        font-size: 16px;
+        padding-left: 40px;
+
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+
+        &::before {
+          top: 0;
+        }
+
+        &.geo::before {
+          width: 26px;
+          height: 26px;
+        }
+
+        &.phone::before {
+          width: 22px;
+          height: 22px;
+        }
+
+        &.email::before {
+          width: 29px;
+          height: 19px;
+        }
+
+        &.web::before {
+          width: 23px;
+          height: 23px;
+        }
+      }
+    }
+  }
+}
