@@ -1,16 +1,22 @@
 .vars {
   margin-top: 130px;
   position: relative;
-  background-image: url("../images/dist/vars-wave.png");
-  background-repeat: no-repeat;
-  background-size: 350px;
-  background-position: 0% 5%;
 
   &__inner {
+    position: relative;
     background-color: $white;
     border-radius: 45px;
     padding: 100px 145px 190px;
-    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  &__background {
+    position: absolute;
+    top: 5%;
+    left: -200px;
+    pointer-events: none;
+    z-index: -1;
+    width: 350px;
   }
 
   &__title {
@@ -116,7 +122,9 @@
 
 @media screen and (max-width: 1400px) {
   .vars {
-    background-image: none;
+    &__background {
+      display: none;
+    }
 
     &__item {
       &_img {
@@ -244,6 +252,7 @@
     }
   }
 }
+
 @media screen and (max-width: 768px) {
   .vars {
     margin-top: 120px;
@@ -275,8 +284,7 @@
         color: $orange;
 
         & svg path {
-          filter: brightness(0) saturate(100%) invert(61%) sepia(66%) saturate(551%) hue-rotate(354deg) brightness(95%)
-            contrast(87%);
+          filter: brightness(0) saturate(100%) invert(61%) sepia(66%) saturate(551%) hue-rotate(354deg) brightness(95%) contrast(87%);
         }
       }
     }

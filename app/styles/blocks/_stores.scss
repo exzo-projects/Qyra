@@ -2,34 +2,35 @@
   margin-top: 200px;
   position: relative;
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 400px;
-    height: 300px;
-    pointer-events: none;
-  }
-
-  &::before {
-    top: -50px;
-    background-image: url("../images/dist/stores-wave-1.png");
-    left: 0;
-  }
-
-  &::after {
-    bottom: -160px;
-    background-image: url("../images/dist/stores-wave-2.png");
-    right: 0;
-  }
-
   &__inner {
+    position: relative;
     border-radius: 45px;
     background-color: $white;
     padding: 55px 45px;
-    box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.08); 
+    box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.08);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 400px;
+      height: 300px;
+      pointer-events: none;
+    }
+
+    &::before {
+      top: -50px;
+      background-image: url("../images/dist/stores-wave-1.png");
+      left: -200px;
+    }
+
+    &::after {
+      bottom: -160px;
+      background-image: url("../images/dist/stores-wave-2.png");
+      right: -200px;
+    }
   }
 
   &__title {
@@ -68,6 +69,7 @@
       left: calc(50% - 35px) !important;
       transform: translateX(-50%);
     }
+
     & .swiper-button-next {
       left: auto !important;
       right: calc(50% - 35px) !important;
@@ -89,19 +91,19 @@
   .stores {
     margin-top: 100px;
 
-    &::before {
-      width: 250px;
-      left: -90px;
-    }
-
-    &::after {
-      bottom: -210px;
-      right: -80px;
-      width: 250px;
-    }
-
     &__inner {
       padding: 20px;
+
+      &::before {
+        width: 250px;
+        left: -90px;
+      }
+
+      &::after {
+        bottom: -210px;
+        right: -80px;
+        width: 250px;
+      }
     }
 
     &__slider {
@@ -132,12 +134,14 @@
 
 @media screen and (max-width: 500px) {
   .stores {
-    &::before {
-      left: -120px;
-    }
+    &__inner {
+      &::before {
+        left: -120px;
+      }
 
-    &::after {
-      right: -120px;
+      &::after {
+        right: -120px;
+      }
     }
 
     &__slider {
